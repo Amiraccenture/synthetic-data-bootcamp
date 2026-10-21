@@ -1,0 +1,85 @@
+{
+  "_comment": "Hand-written, hand-verified example tasks. The generator imitates these few-shot, so quality matters more than quantity (3-6 good ones is plenty). Each must PASS verification: read-only types use no WRITE tool; write types use at least one; oracle actions must be replayable on db.json; communicate_info substrings must be things the agent can realistically say. TODO: rewrite for your domain, then confirm they verify in notebook 2.",
+  "tasks": [
+    {
+      "id": "seed_inquiry",
+      "description": "Look up an open record for the customer",
+      "task_type": "inquiry",
+      "user_scenario": {
+        "user_name": "Alice Chen",
+        "personality_style": "rushed",
+        "instructions": "Ask about the status of record rec_1001.",
+        "initial_message": "What's going on with my record? Need an update now."
+      },
+      "evaluation_criteria": {
+        "actions": [
+          { "name": "get_record", "arguments": { "record_id": "rec_1001" } }
+        ],
+        "communicate_info": [],
+        "reward_basis": ["DB", "COMMUNICATE"]
+      }
+    },
+    {
+      "id": "seed_close",
+      "description": "Close an open record",
+      "task_type": "close",
+      "user_scenario": {
+        "user_name": "Alice Chen",
+        "personality_style": "anxious",
+        "instructions": "Request closure of open record rec_1001.",
+        "initial_message": "I'd like to close out my record, can you help?"
+      },
+      "evaluation_criteria": {
+        "actions": [
+          { "name": "get_record", "arguments": { "record_id": "rec_1001" } },
+          { "name": "close_record", "arguments": { "record_id": "rec_1001" } }
+        ],
+        "communicate_info": ["closed"],
+        "reward_basis": ["DB", "COMMUNICATE"]
+      }
+    },
+    {
+      "id": "seed_refuse_close",
+      "description": "Refuse to close an already-closed record",
+      "task_type": "refuse_close",
+      "user_scenario": {
+        "user_name": "Alice Chen",
+        "personality_style": "rule_breaker",
+        "instructions": "Insist on closing record rec_1002 which is already closed.",
+        "initial_message": "Close my record again right now — I don't care about the status."
+      },
+      "evaluation_criteria": {
+        "actions": [
+          { "name": "get_record", "arguments": { "record_id": "rec_1002" } }
+        ],
+        "communicate_info": ["cannot be closed"],
+        "reward_basis": ["DB", "COMMUNICATE"]
+      }
+    },
+    {
+      "id": "seed_update",
+      "description": "Update the detail field on an open record",
+      "task_type": "update",
+      "user_scenario": {
+        "user_name": "Bob Martinez",
+        "personality_style": "domain_expert",
+        "instructions": "Request to change the detail on record rec_2001 to 456 Elm St, Austin, TX.",
+        "initial_message": "Hi, I need to update the detail on my record."
+      },
+      "evaluation_criteria": {
+        "actions": [
+          { "name": "get_record", "arguments": { "record_id": "rec_2001" } },
+          {
+            "name": "update_record",
+            "arguments": {
+              "record_id": "rec_2001",
+              "detail": "456 Elm St, Austin, TX"
+            }
+          }
+        ],
+        "communicate_info": ["456 Elm St"],
+        "reward_basis": ["DB", "COMMUNICATE"]
+      }
+    }
+  ]
+}

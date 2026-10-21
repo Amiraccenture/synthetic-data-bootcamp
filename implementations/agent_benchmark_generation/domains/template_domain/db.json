@@ -1,0 +1,38 @@
+{
+  "_comment": "TODO: Replace with YOUR world state. Top-level keys are tables; each table is an OBJECT keyed by entity id (not a list). The 'primary_collection' in generation.yaml must point at one of these tables, and every related.*.collection must exist here too. Keep it small (a handful of rows) but cover every status/edge case your task_types need. Remove this _comment key before generating.",
+  "customers": {
+    "cust_alice": {
+      "customer_id": "cust_alice",
+      "name": "Alice Chen",
+      "email": "alice@example.com"
+    },
+    "cust_bob": {
+      "customer_id": "cust_bob",
+      "name": "Bob Martinez",
+      "email": "bob@example.com"
+    }
+  },
+  "records": {
+    "rec_1001": {
+      "record_id": "rec_1001",
+      "customer_id": "cust_alice",
+      "status": "open",
+      "value": "widget-a",
+      "detail": "123 Main St, Boston, MA"
+    },
+    "rec_1002": {
+      "record_id": "rec_1002",
+      "customer_id": "cust_alice",
+      "status": "closed",
+      "value": "widget-b",
+      "detail": "456 Oak Ave, Boston, MA"
+    },
+    "rec_2001": {
+      "record_id": "rec_2001",
+      "customer_id": "cust_bob",
+      "status": "open",
+      "value": "gadget-x",
+      "detail": "789 Pine Rd, Austin, TX"
+    }
+  }
+}
