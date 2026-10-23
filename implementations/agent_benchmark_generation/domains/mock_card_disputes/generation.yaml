@@ -1,0 +1,55 @@
+# =============================================================================
+# Card-disputes domain generation config
+# Binds the sampler + generation prompt to db.json. See schemas/generation.py.
+# =============================================================================
+
+# Role label for the agent under test.
+agent_role: "card-disputes customer service agent"
+
+# Tasks are sampled around a transaction.
+primary_collection: transactions
+id_field: transaction_id
+
+# Foreign-key joins used for prompt context and persona.
+related:
+  card_id:
+    collection: cards
+    via: card_id
+    fields: [last_four, status]
+  customer_id:
+    collection: customers
+    via: customer_id
+    fields: [name, email]
+
+# Primary-record columns shown to the generator so it respects transaction state
+# (e.g. only generate open_dispute tasks for disputable transactions).
+context_fields:
+  - transaction_id
+  - card_id
+  - customer_id
+  - merchant
+  - amount
+  - status
+  - age_days
+  - disputed
+  - disputable
+
+# Persona name comes from the owning customer.
+persona_related: customer_id
+persona_field: name
+
+# Keep generated oracles valid by construction: dispute tasks only sample
+# disputable transactions, refusal tasks only sample ineligible ones.
+# (inquiry and block_card may use any transaction.)
+eligibility:
+  open_dispute:
+    disputable: [true]
+  refuse_dispute:
+    disputable: [false]
+
+# Per-task_type hints for evaluation_criteria.communicate_info.
+communicate_hints:
+  inquiry: "Usually []. Add substrings only if the user must hear specific facts back."
+  open_dispute: 'Include a short confirmation substring, e.g. ["dispute"].'
+  refuse_dispute: 'Include the refusal substring from policy: ["cannot be disputed"].'
+  block_card: 'Include a confirmation substring, e.g. ["blocked"].'

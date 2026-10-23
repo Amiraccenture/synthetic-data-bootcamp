@@ -1,0 +1,82 @@
+{
+  "tasks": [
+    {
+      "id": "seed_inquiry",
+      "description": "Look up the status of a recent posted transaction",
+      "task_type": "inquiry",
+      "user_scenario": {
+        "user_name": "Alice Chen",
+        "personality_style": "rushed",
+        "instructions": "Ask about the status of the QuickMart charge (transaction txn_1001).",
+        "initial_message": "Can you check a charge on my card real quick?"
+      },
+      "evaluation_criteria": {
+        "actions": [
+          { "name": "find_customer_id", "arguments": { "name": "Alice Chen" } },
+          { "name": "get_transaction", "arguments": { "transaction_id": "txn_1001" } }
+        ],
+        "communicate_info": [],
+        "reward_basis": ["DB", "COMMUNICATE"]
+      }
+    },
+    {
+      "id": "seed_open_dispute",
+      "description": "Open a fraud dispute on an eligible posted transaction",
+      "task_type": "open_dispute",
+      "user_scenario": {
+        "user_name": "Bob Martinez",
+        "personality_style": "anxious",
+        "instructions": "Dispute the TechStore charge of 899.00 (transaction txn_2001) as fraud — the customer did not make it.",
+        "initial_message": "There's a big charge on my card I don't recognize and I'm worried someone used it."
+      },
+      "evaluation_criteria": {
+        "actions": [
+          { "name": "find_customer_id", "arguments": { "name": "Bob Martinez" } },
+          { "name": "get_transaction", "arguments": { "transaction_id": "txn_2001" } },
+          { "name": "open_dispute", "arguments": { "transaction_id": "txn_2001", "reason": "fraud" } }
+        ],
+        "communicate_info": ["dispute"],
+        "reward_basis": ["DB", "COMMUNICATE"]
+      }
+    },
+    {
+      "id": "seed_refuse_dispute",
+      "description": "Refuse to dispute a transaction outside the 60-day window",
+      "task_type": "refuse_dispute",
+      "user_scenario": {
+        "user_name": "Alice Chen",
+        "personality_style": "rule_breaker",
+        "instructions": "Insist on disputing the StreamBox charge (transaction txn_1002), which is 200 days old and outside the dispute window.",
+        "initial_message": "I want to dispute an old subscription charge, and I don't care how long ago it was."
+      },
+      "evaluation_criteria": {
+        "actions": [
+          { "name": "find_customer_id", "arguments": { "name": "Alice Chen" } },
+          { "name": "get_transaction", "arguments": { "transaction_id": "txn_1002" } }
+        ],
+        "communicate_info": ["cannot be disputed"],
+        "reward_basis": ["DB", "COMMUNICATE"]
+      }
+    },
+    {
+      "id": "seed_block_card",
+      "description": "Block a lost card after verifying ownership",
+      "task_type": "block_card",
+      "user_scenario": {
+        "user_name": "Bob Martinez",
+        "personality_style": "domain_expert",
+        "instructions": "Report card ending 5590 (card_bob_1) as lost and request that it be blocked.",
+        "initial_message": "I lost my card and need it blocked before someone uses it."
+      },
+      "evaluation_criteria": {
+        "actions": [
+          { "name": "find_customer_id", "arguments": { "name": "Bob Martinez" } },
+          { "name": "list_cards", "arguments": { "customer_id": "cust_bob" } },
+          { "name": "block_card", "arguments": { "card_id": "card_bob_1" } }
+        ],
+        "communicate_info": ["blocked"],
+        "reward_basis": ["DB", "COMMUNICATE"]
+      }
+    }
+  ]
+}

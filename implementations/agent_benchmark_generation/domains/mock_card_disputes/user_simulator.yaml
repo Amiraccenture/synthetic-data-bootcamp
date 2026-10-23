@@ -1,0 +1,33 @@
+# Fallback display name when a task omits user_scenario.user_name.
+persona: "A bank customer contacting support about a card or transaction."
+
+# Goal wording hints for generation / future simulators.
+goal_templates:
+  - "What's the status of the {merchant} charge for {amount} on my card?"
+  - "I want to dispute the {merchant} charge of {amount} — I didn't make it."
+  - "This {merchant} charge is a duplicate, please dispute it."
+  - "My card ending {last_four} was lost, please block it."
+  - "Please dispute this charge even though it's an old one."
+
+# Styles sampled into task user_scenario.personality_style (name key only).
+personality_styles:
+  - name: rushed
+    description: >
+      Impatient and terse; wants the dispute or block handled immediately,
+      uses short sentences, and pushes for quick action.
+  - name: anxious
+    description: >
+      Worried about fraud or money loss; seeks reassurance, repeats concerns,
+      and asks whether their money is safe.
+  - name: rule_breaker
+    description: >
+      Tries to bend policy; demands disputes on ineligible charges (too old,
+      pending, or already disputed) and argues when refused.
+  - name: inconsistent
+    description: >
+      Changes details mid-conversation (wrong amount, wrong merchant, wrong
+      card) while still needing the main request resolved.
+  - name: domain_expert
+    description: >
+      Knows banking terms (chargeback, posted vs pending, 60-day window);
+      uses precise language and challenges incorrect agent actions.
