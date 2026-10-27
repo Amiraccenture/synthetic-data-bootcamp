@@ -1,85 +1,65 @@
-# Credit Card Agent — Task Types
-# allow_write: true  → correct resolution changes the database
-# allow_write: false → read-only; agent looks up or refuses, nothing is written
-
-# ── COMMON REQUESTS ──────────────────────────────────────────────────────────
+# v1 task types (7 of the 19 in task_types.full.yaml).
+#
+# The sampler draws uniformly from THIS file, so every type listed here must be
+# fully supported by tools.py, generation.yaml and verify.py. The remaining
+# types live in task_types.full.yaml and can be promoted here as tools are added.
+#
+# allow_write: true  -> oracle must use at least one WRITE tool
+# allow_write: false -> read-only; agent looks up or refuses, nothing is written
+#
+# Descriptions are shown verbatim to the task generator, so they spell out the
+# exact write actions the policy requires.
 
 task_types:
 
   balance_inquiry:
     allow_write: false
-    description: Customer asks for current balance, available credit, or next due date
-
-  payment_due_inquiry:
-    allow_write: false
-    description: Customer asks for minimum payment amount or payment due date
-
-  transaction_history:
-    allow_write: false
-    description: Customer asks to review recent transactions on their statement
-
-  fee_waiver:
-    allow_write: true
-    description: Customer requests removal of a late payment or returned payment fee
+    description: >
+      Customer asks for their current balance, available credit, or next due
+      date. Agent verifies identity, looks up the account, and reports it.
 
   transaction_dispute:
     allow_write: true
-    description: Customer disputes an unrecognized or incorrect charge within 60 days
-
-  address_update:
-    allow_write: true
-    description: Customer requests a change to their billing address on file
-
-  lost_card_report:
-    allow_write: true
-    description: Customer reports their card lost or stolen; account is flagged and replacement issued
-
-  authorized_user_add:
-    allow_write: true
-    description: Primary cardholder requests adding a new authorized user to the account
-
-  payment_holiday_enrollment:
-    allow_write: true
-    description: Customer opts in to skip a minimum payment during an eligible month
-
-  vau_opt_out:
-    allow_write: true
-    description: Customer requests to be removed from the Visa Account Updater service
-
-# ── EDGE CASES ────────────────────────────────────────────────────────────────
+    description: >
+      Customer disputes a specific charge for a billing reason (incorrect amount,
+      duplicate charge, item not received, or unrecognized charge) and the charge
+      is within the 60-day dispute window. Agent verifies identity, confirms the
+      charge, opens the dispute, and states the 30-day and 90-day timelines.
 
   refuse_dispute:
     allow_write: false
-    description: Agent rejects dispute because transaction is older than 60 days from statement date
+    description: >
+      Customer asks to dispute a charge that is more than 60 days past the
+      statement date on which it first appeared. Agent verifies identity, looks
+      up the transaction, and refuses, explaining the 60-day window. No write.
+
+  fee_waiver:
+    allow_write: true
+    description: >
+      Customer requests removal of a late payment or returned payment fee and is
+      eligible (no prior waiver of that fee type within the policy window).
+      Agent verifies identity, checks fee history, and waives exactly one fee.
 
   refuse_fee_waiver:
     allow_write: false
-    description: Agent rejects fee waiver because one was already applied in the past 12 months
+    description: >
+      Customer requests a fee waiver but a fee of that type was already waived
+      within the policy window (12 months for late fees, same calendar year for
+      returned payment fees). Agent verifies identity, checks fee history, and
+      refuses, explaining why. No write.
 
-  credit_limit_increase:
+  lost_card_report:
     allow_write: true
-    description: Customer requests a higher credit limit; requires credit review and supervisor approval
-
-  authorized_user_remove:
-    allow_write: true
-    description: Primary cardholder requests removal of an authorized user; may require account closure
-
-  stop_payment_check:
-    allow_write: true
-    description: Customer requests a stop payment on a convenience check; fee applies
+    description: >
+      Customer reports a specific card lost or stolen. Agent verifies identity,
+      confirms which card, replaces it (which flags the account), and states the
+      customer's liability after notification is $0.
 
   fraud_escalation:
     allow_write: true
-    description: Suspected fraud confirmed during interaction; account flagged and escalated to fraud team
-
-  unauthorized_use_dispute:
-    allow_write: true
-    description: Customer reports specific charges made after card was lost or stolen
-
-  refuse_payment_holiday:
-    allow_write: false
-    description: Agent rejects payment holiday because account has a past-due balance on any DCCU loan
-
-  account_closure_request:
-    allow_write: true
-    description: Customer requests to close their account; balance obligation remains; requires escalation
+    description: >
+      Customer reports unauthorized charges and believes their card details were
+      compromised, while still holding the card. Agent does not decide whether it
+      is fraud: it verifies identity, escalates to a human agent as suspected
+      fraud (which flags the account), issues a replacement card for the
+      compromised card, and tells the customer a human agent will follow up.

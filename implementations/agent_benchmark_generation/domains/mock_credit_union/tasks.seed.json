@@ -1,0 +1,142 @@
+{
+  "tasks": [
+    {
+      "id": "seed_balance_inquiry",
+      "description": "Customer asks for their current balance",
+      "task_type": "balance_inquiry",
+      "user_scenario": {
+        "user_name": "Maya Patel",
+        "personality_style": "rushed",
+        "instructions": "Ask for your current balance. If asked to verify, give: full name Maya Patel, account ending 4821, date of birth 1988-02-14.",
+        "initial_message": "Hi, quick question about what I owe on my card."
+      },
+      "evaluation_criteria": {
+        "actions": [
+          { "name": "verify_identity", "arguments": { "full_name": "Maya Patel", "account_last4": "4821", "date_of_birth": "1988-02-14" } },
+          { "name": "get_account", "arguments": { "customer_id": "cu_20417" } }
+        ],
+        "communicate_info": ["412.37"],
+        "reward_basis": ["DB", "COMMUNICATE"]
+      }
+    },
+    {
+      "id": "seed_transaction_dispute",
+      "description": "Dispute a recent charge for an incorrect amount",
+      "task_type": "transaction_dispute",
+      "user_scenario": {
+        "user_name": "Hannah Lindqvist",
+        "personality_style": "domain_expert",
+        "instructions": "Dispute the Nordic Outfitters charge of 148.00: your receipt says you were only charged 84.00, so the reason is an incorrect amount. If asked to verify, give: full name Hannah Lindqvist, account ending 2913, SSN last four 6618.",
+        "initial_message": "I need to open a dispute on a recent charge, there's a billing error."
+      },
+      "evaluation_criteria": {
+        "actions": [
+          { "name": "verify_identity", "arguments": { "full_name": "Hannah Lindqvist", "account_last4": "2913", "ssn_last4": "6618" } },
+          { "name": "get_transaction", "arguments": { "customer_id": "cu_60845", "transaction_id": "txn_60845_1" } },
+          { "name": "open_dispute", "arguments": { "customer_id": "cu_60845", "transaction_id": "txn_60845_1", "reason": "incorrect_amount" } }
+        ],
+        "communicate_info": ["30 days", "90 days"],
+        "reward_basis": ["DB", "COMMUNICATE"]
+      }
+    },
+    {
+      "id": "seed_refuse_dispute",
+      "description": "Refuse to dispute a charge outside the 60-day window",
+      "task_type": "refuse_dispute",
+      "user_scenario": {
+        "user_name": "Daniel Okafor",
+        "personality_style": "rule_breaker",
+        "instructions": "Insist on disputing the HomeNest Furniture charge of 310.00 as an incorrect amount, even though it is well over two months old. Push back when refused. If asked to verify, give: full name Daniel Okafor, account ending 6102, date of birth 1979-09-03.",
+        "initial_message": "There's an old furniture charge I want reversed. I don't care how long ago it was."
+      },
+      "evaluation_criteria": {
+        "actions": [
+          { "name": "verify_identity", "arguments": { "full_name": "Daniel Okafor", "account_last4": "6102", "date_of_birth": "1979-09-03" } },
+          { "name": "get_transaction", "arguments": { "customer_id": "cu_31588", "transaction_id": "txn_31588_2" } }
+        ],
+        "communicate_info": ["60 days"],
+        "reward_basis": ["DB", "COMMUNICATE"]
+      }
+    },
+    {
+      "id": "seed_fee_waiver",
+      "description": "Waive an eligible late payment fee",
+      "task_type": "fee_waiver",
+      "user_scenario": {
+        "user_name": "Priya Raman",
+        "personality_style": "anxious",
+        "instructions": "Ask for the late payment fee on your account to be waived because this is the first time you have paid late. If asked to verify, give: full name Priya Raman, account ending 3359, date of birth 1992-12-30.",
+        "initial_message": "I got charged a fee on my card and I'm really worried about it, can you help?"
+      },
+      "evaluation_criteria": {
+        "actions": [
+          { "name": "verify_identity", "arguments": { "full_name": "Priya Raman", "account_last4": "3359", "date_of_birth": "1992-12-30" } },
+          { "name": "list_fees", "arguments": { "customer_id": "cu_44026" } },
+          { "name": "waive_fee", "arguments": { "customer_id": "cu_44026", "fee_id": "fee_44026_1", "reason": "first_time_request" } }
+        ],
+        "communicate_info": ["waived"],
+        "reward_basis": ["DB", "COMMUNICATE"]
+      }
+    },
+    {
+      "id": "seed_refuse_fee_waiver",
+      "description": "Refuse a late fee waiver because one was already waived within 12 months",
+      "task_type": "refuse_fee_waiver",
+      "user_scenario": {
+        "user_name": "Tomás Rivera",
+        "personality_style": "rushed",
+        "instructions": "Ask for your latest late payment fee to be waived. You do not mention that a late fee was waived for you a few months ago. Accept the answer if it is explained. If asked to verify, give: full name Tomás Rivera, account ending 7740, date of birth 1983-06-18.",
+        "initial_message": "Take the late fee off my account, I'm in a hurry."
+      },
+      "evaluation_criteria": {
+        "actions": [
+          { "name": "verify_identity", "arguments": { "full_name": "Tomás Rivera", "account_last4": "7740", "date_of_birth": "1983-06-18" } },
+          { "name": "list_fees", "arguments": { "customer_id": "cu_52371" } }
+        ],
+        "communicate_info": ["12 months"],
+        "reward_basis": ["DB", "COMMUNICATE"]
+      }
+    },
+    {
+      "id": "seed_lost_card_report",
+      "description": "Replace a lost card",
+      "task_type": "lost_card_report",
+      "user_scenario": {
+        "user_name": "Sofia Alvarez",
+        "personality_style": "inconsistent",
+        "instructions": "Report your card ending 9027 as lost and ask for a replacement. You also hold a card ending 4410, which you still have; at first mix the two up, then settle on 9027. If asked to verify, give: full name Sofia Alvarez, account ending 1675, SSN last four 7702.",
+        "initial_message": "I can't find my card anywhere, I think I lost it."
+      },
+      "evaluation_criteria": {
+        "actions": [
+          { "name": "verify_identity", "arguments": { "full_name": "Sofia Alvarez", "account_last4": "1675", "ssn_last4": "7702" } },
+          { "name": "list_cards", "arguments": { "customer_id": "cu_71530" } },
+          { "name": "replace_card", "arguments": { "customer_id": "cu_71530", "card_id": "card_71530_2", "reason": "lost" } }
+        ],
+        "communicate_info": ["replacement", "$0"],
+        "reward_basis": ["DB", "COMMUNICATE"]
+      }
+    },
+    {
+      "id": "seed_fraud_escalation",
+      "description": "Escalate suspected fraud and replace the compromised card",
+      "task_type": "fraud_escalation",
+      "user_scenario": {
+        "user_name": "Liam O'Connor",
+        "personality_style": "anxious",
+        "instructions": "Report that the Online Electronics and Gadget Galaxy charges are not yours and you think someone got your card number. You still have your card (ending 6038). Ask whether you will have to pay for them. If asked to verify, give: full name Liam O'Connor, account ending 7519, date of birth 1999-05-16.",
+        "initial_message": "There are charges on my account I never made. Someone must have my card number."
+      },
+      "evaluation_criteria": {
+        "actions": [
+          { "name": "verify_identity", "arguments": { "full_name": "Liam O'Connor", "account_last4": "7519", "date_of_birth": "1999-05-16" } },
+          { "name": "list_transactions", "arguments": { "customer_id": "cu_99650" } },
+          { "name": "escalate_to_human", "arguments": { "reason": "suspected_fraud", "customer_id": "cu_99650" } },
+          { "name": "replace_card", "arguments": { "customer_id": "cu_99650", "card_id": "card_99650_1", "reason": "compromised" } }
+        ],
+        "communicate_info": ["human agent"],
+        "reward_basis": ["DB", "COMMUNICATE"]
+      }
+    }
+  ]
+}
