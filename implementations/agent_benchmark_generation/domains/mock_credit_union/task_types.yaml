@@ -16,22 +16,8 @@ task_types:
     allow_write: false
     description: >
       Customer asks for their current balance, available credit, or next due
-      date. Agent verifies identity, looks up the account, and reports it.
-
-  transaction_dispute:
-    allow_write: true
-    description: >
-      Customer disputes a specific charge for a billing reason (incorrect amount,
-      duplicate charge, item not received, or unrecognized charge) and the charge
-      is within the 60-day dispute window. Agent verifies identity, confirms the
-      charge, opens the dispute, and states the 30-day and 90-day timelines.
-
-  refuse_dispute:
-    allow_write: false
-    description: >
-      Customer asks to dispute a charge that is more than 60 days past the
-      statement date on which it first appeared. Agent verifies identity, looks
-      up the transaction, and refuses, explaining the 60-day window. No write.
+      date. Agent verifies identity, looks up the account, and reports the
+      figures. Nothing is changed. The agent gives only this customer's figures.
 
   fee_waiver:
     allow_write: true
@@ -39,27 +25,42 @@ task_types:
       Customer requests removal of a late payment or returned payment fee and is
       eligible (no prior waiver of that fee type within the policy window).
       Agent verifies identity, checks fee history, and waives exactly one fee.
+      The agent confirms the fee and amount with the customer and records the
+      reason for the waiver.
 
-  refuse_fee_waiver:
-    allow_write: false
+  address_update:
+    allow_write: true
     description: >
-      Customer requests a fee waiver but a fee of that type was already waived
-      within the policy window (12 months for late fees, same calendar year for
-      returned payment fees). Agent verifies identity, checks fee history, and
-      refuses, explaining why. No write.
+      Customer requests a change to the mailing or billing address on file.
+      Agent verifies identity, asks for the new address, reads it back and
+      gets the customer's confirmation, then updates the address on the account.
+      If the caller is an authorized user rather than the primary cardholder,
+      the agent must not change the primary cardholder's address and should
+      explain that only the primary cardholder can request that change.
 
   lost_card_report:
     allow_write: true
     description: >
       Customer reports a specific card lost or stolen. Agent verifies identity,
       confirms which card, replaces it (which flags the account), and states the
-      customer's liability after notification is $0.
+      customer's liability after notification is $0. The agent also tells the
+      customer to report the loss in writing.
 
-  fraud_escalation:
+  refuse_dispute:
+    allow_write: false
+    description: >
+      Customer asks to dispute a charge that is more than 60 days past the
+      statement date on which it first appeared. Agent verifies identity, looks
+      up the transaction, and refuses, explaining the 60-day window. The agent
+      suggests the customer contact the merchant directly. No dispute is opened
+      and nothing is written.
+
+  account_closure_request:
     allow_write: true
     description: >
-      Customer reports unauthorized charges and believes their card details were
-      compromised, while still holding the card. Agent does not decide whether it
-      is fraud: it verifies identity, escalates to a human agent as suspected
-      fraud (which flags the account), issues a replacement card for the
-      compromised card, and tells the customer a human agent will follow up.
+      Customer asks to close their credit card account. Agent verifies identity
+      and explains that the outstanding balance must still be paid after
+      closure. The agent must not close the account itself. It escalates the
+      request to a supervisor and tells the customer a supervisor will follow up.
+      The oracle records this as an escalate_to_human action with reason
+      supervisor_request for the verified customer.
