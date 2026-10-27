@@ -1,0 +1,1152 @@
+{
+  "meta": {
+    "today": "2026-10-27"
+  },
+  "customers": {
+    "cu_20417": {
+      "customer_id": "cu_20417",
+      "name": "Maya Patel",
+      "date_of_birth": "1988-02-14",
+      "ssn_last4": "3921",
+      "address": "210 Juniper St NE, Atlanta, GA 30308"
+    },
+    "cu_31588": {
+      "customer_id": "cu_31588",
+      "name": "Daniel Okafor",
+      "date_of_birth": "1979-09-03",
+      "ssn_last4": "5530",
+      "address": "845 Cedar Ave, Decatur, GA 30030"
+    },
+    "cu_44026": {
+      "customer_id": "cu_44026",
+      "name": "Priya Raman",
+      "date_of_birth": "1992-12-30",
+      "ssn_last4": "8174",
+      "address": "77 Magnolia Rd, Marietta, GA 30060"
+    },
+    "cu_52371": {
+      "customer_id": "cu_52371",
+      "name": "Tomás Rivera",
+      "date_of_birth": "1983-06-18",
+      "ssn_last4": "2046",
+      "address": "3012 Shady Oak Dr, Atlanta, GA 30305"
+    },
+    "cu_60845": {
+      "customer_id": "cu_60845",
+      "name": "Hannah Lindqvist",
+      "date_of_birth": "1975-04-09",
+      "ssn_last4": "6618",
+      "address": "512 Oak Hollow Dr, Roswell, GA 30075"
+    },
+    "cu_67199": {
+      "customer_id": "cu_67199",
+      "name": "Marcus Bell",
+      "date_of_birth": "1990-01-22",
+      "ssn_last4": "1493",
+      "address": "96 Birch Ln, Smyrna, GA 30080"
+    },
+    "cu_71530": {
+      "customer_id": "cu_71530",
+      "name": "Sofia Alvarez",
+      "date_of_birth": "1986-11-27",
+      "ssn_last4": "7702",
+      "address": "430 Pine Crest Way, Alpharetta, GA 30009"
+    },
+    "cu_78264": {
+      "customer_id": "cu_78264",
+      "name": "Kenji Watanabe",
+      "date_of_birth": "1981-08-15",
+      "ssn_last4": "4385",
+      "address": "18 Harbor View Ct, Savannah, GA 31401"
+    },
+    "cu_83912": {
+      "customer_id": "cu_83912",
+      "name": "Grace Thompson",
+      "date_of_birth": "1994-03-05",
+      "ssn_last4": "9051",
+      "address": "702 Willow St, Athens, GA 30601"
+    },
+    "cu_90077": {
+      "customer_id": "cu_90077",
+      "name": "Omar Haddad",
+      "date_of_birth": "1977-10-12",
+      "ssn_last4": "2860",
+      "address": "5 Lakeside Dr, Columbus, GA 31901"
+    },
+    "cu_95408": {
+      "customer_id": "cu_95408",
+      "name": "Beatrice Moreau",
+      "date_of_birth": "1968-07-29",
+      "ssn_last4": "3317",
+      "address": "263 Azalea Blvd, Macon, GA 31201"
+    },
+    "cu_99650": {
+      "customer_id": "cu_99650",
+      "name": "Liam O'Connor",
+      "date_of_birth": "1999-05-16",
+      "ssn_last4": "5894",
+      "address": "1188 Ridgeway Pl, Augusta, GA 30901"
+    }
+  },
+  "accounts": {
+    "acct_20417": {
+      "account_id": "acct_20417",
+      "customer_id": "cu_20417",
+      "account_last4": "4821",
+      "status": "current",
+      "credit_limit": 3000.0,
+      "current_balance": 412.37,
+      "available_credit": 2587.63,
+      "minimum_payment": 25.0,
+      "payment_due_date": "2026-11-08",
+      "past_due_amount": 0.0
+    },
+    "acct_31588": {
+      "account_id": "acct_31588",
+      "customer_id": "cu_31588",
+      "account_last4": "6102",
+      "status": "current",
+      "credit_limit": 2500.0,
+      "current_balance": 238.9,
+      "available_credit": 2261.1,
+      "minimum_payment": 25.0,
+      "payment_due_date": "2026-11-01",
+      "past_due_amount": 0.0
+    },
+    "acct_44026": {
+      "account_id": "acct_44026",
+      "customer_id": "cu_44026",
+      "account_last4": "3359",
+      "status": "current",
+      "credit_limit": 4000.0,
+      "current_balance": 655.1,
+      "available_credit": 3344.9,
+      "minimum_payment": 25.0,
+      "payment_due_date": "2026-10-30",
+      "past_due_amount": 0.0
+    },
+    "acct_52371": {
+      "account_id": "acct_52371",
+      "customer_id": "cu_52371",
+      "account_last4": "7740",
+      "status": "current",
+      "credit_limit": 3500.0,
+      "current_balance": 502.66,
+      "available_credit": 2997.34,
+      "minimum_payment": 25.0,
+      "payment_due_date": "2026-11-05",
+      "past_due_amount": 0.0
+    },
+    "acct_60845": {
+      "account_id": "acct_60845",
+      "customer_id": "cu_60845",
+      "account_last4": "2913",
+      "status": "current",
+      "credit_limit": 3000.0,
+      "current_balance": 301.45,
+      "available_credit": 2698.55,
+      "minimum_payment": 25.0,
+      "payment_due_date": "2026-11-10",
+      "past_due_amount": 0.0
+    },
+    "acct_67199": {
+      "account_id": "acct_67199",
+      "customer_id": "cu_67199",
+      "account_last4": "8826",
+      "status": "current",
+      "credit_limit": 5000.0,
+      "current_balance": 744.2,
+      "available_credit": 4255.8,
+      "minimum_payment": 25.0,
+      "payment_due_date": "2026-11-03",
+      "past_due_amount": 0.0
+    },
+    "acct_71530": {
+      "account_id": "acct_71530",
+      "customer_id": "cu_71530",
+      "account_last4": "1675",
+      "status": "current",
+      "credit_limit": 5000.0,
+      "current_balance": 889.0,
+      "available_credit": 4111.0,
+      "minimum_payment": 25.0,
+      "payment_due_date": "2026-11-06",
+      "past_due_amount": 0.0
+    },
+    "acct_78264": {
+      "account_id": "acct_78264",
+      "customer_id": "cu_78264",
+      "account_last4": "5048",
+      "status": "current",
+      "credit_limit": 2500.0,
+      "current_balance": 177.52,
+      "available_credit": 2322.48,
+      "minimum_payment": 25.0,
+      "payment_due_date": "2026-11-02",
+      "past_due_amount": 0.0
+    },
+    "acct_83912": {
+      "account_id": "acct_83912",
+      "customer_id": "cu_83912",
+      "account_last4": "9387",
+      "status": "current",
+      "credit_limit": 2000.0,
+      "current_balance": 366.8,
+      "available_credit": 1633.2,
+      "minimum_payment": 25.0,
+      "payment_due_date": "2026-11-07",
+      "past_due_amount": 0.0
+    },
+    "acct_90077": {
+      "account_id": "acct_90077",
+      "customer_id": "cu_90077",
+      "account_last4": "6631",
+      "status": "current",
+      "credit_limit": 3000.0,
+      "current_balance": 528.33,
+      "available_credit": 2471.67,
+      "minimum_payment": 25.0,
+      "payment_due_date": "2026-10-31",
+      "past_due_amount": 0.0
+    },
+    "acct_95408": {
+      "account_id": "acct_95408",
+      "customer_id": "cu_95408",
+      "account_last4": "1204",
+      "status": "current",
+      "credit_limit": 4000.0,
+      "current_balance": 691.75,
+      "available_credit": 3308.25,
+      "minimum_payment": 25.0,
+      "payment_due_date": "2026-11-04",
+      "past_due_amount": 0.0
+    },
+    "acct_99650": {
+      "account_id": "acct_99650",
+      "customer_id": "cu_99650",
+      "account_last4": "7519",
+      "status": "current",
+      "credit_limit": 1500.0,
+      "current_balance": 95.1,
+      "available_credit": 1404.9,
+      "minimum_payment": 25.0,
+      "payment_due_date": "2026-11-09",
+      "past_due_amount": 0.0
+    }
+  },
+  "cards": {
+    "card_20417_1": {
+      "card_id": "card_20417_1",
+      "customer_id": "cu_20417",
+      "last_four": "7305",
+      "status": "active"
+    },
+    "card_31588_1": {
+      "card_id": "card_31588_1",
+      "customer_id": "cu_31588",
+      "last_four": "2284",
+      "status": "active"
+    },
+    "card_44026_1": {
+      "card_id": "card_44026_1",
+      "customer_id": "cu_44026",
+      "last_four": "9911",
+      "status": "active"
+    },
+    "card_52371_1": {
+      "card_id": "card_52371_1",
+      "customer_id": "cu_52371",
+      "last_four": "1357",
+      "status": "active"
+    },
+    "card_60845_1": {
+      "card_id": "card_60845_1",
+      "customer_id": "cu_60845",
+      "last_four": "5568",
+      "status": "active"
+    },
+    "card_67199_1": {
+      "card_id": "card_67199_1",
+      "customer_id": "cu_67199",
+      "last_four": "6672",
+      "status": "active"
+    },
+    "card_71530_1": {
+      "card_id": "card_71530_1",
+      "customer_id": "cu_71530",
+      "last_four": "4410",
+      "status": "active"
+    },
+    "card_71530_2": {
+      "card_id": "card_71530_2",
+      "customer_id": "cu_71530",
+      "last_four": "9027",
+      "status": "active"
+    },
+    "card_78264_1": {
+      "card_id": "card_78264_1",
+      "customer_id": "cu_78264",
+      "last_four": "3046",
+      "status": "active"
+    },
+    "card_83912_1": {
+      "card_id": "card_83912_1",
+      "customer_id": "cu_83912",
+      "last_four": "8120",
+      "status": "active"
+    },
+    "card_90077_1": {
+      "card_id": "card_90077_1",
+      "customer_id": "cu_90077",
+      "last_four": "4752",
+      "status": "active"
+    },
+    "card_95408_1": {
+      "card_id": "card_95408_1",
+      "customer_id": "cu_95408",
+      "last_four": "2599",
+      "status": "active"
+    },
+    "card_99650_1": {
+      "card_id": "card_99650_1",
+      "customer_id": "cu_99650",
+      "last_four": "6038",
+      "status": "active"
+    }
+  },
+  "transactions": {
+    "txn_20417_1": {
+      "transaction_id": "txn_20417_1",
+      "customer_id": "cu_20417",
+      "account_id": "acct_20417",
+      "card_id": "card_20417_1",
+      "merchant": "GreenLeaf Grocers",
+      "amount": 86.42,
+      "date": "2026-10-09",
+      "statement_date": "2026-10-15",
+      "status": "posted",
+      "disputed": false
+    },
+    "txn_20417_2": {
+      "transaction_id": "txn_20417_2",
+      "customer_id": "cu_20417",
+      "account_id": "acct_20417",
+      "card_id": "card_20417_1",
+      "merchant": "Metro Transit",
+      "amount": 34.0,
+      "date": "2026-10-04",
+      "statement_date": "2026-10-07",
+      "status": "posted",
+      "disputed": false
+    },
+    "txn_20417_3": {
+      "transaction_id": "txn_20417_3",
+      "customer_id": "cu_20417",
+      "account_id": "acct_20417",
+      "card_id": "card_20417_1",
+      "merchant": "BrightBooks",
+      "amount": 129.99,
+      "date": "2026-09-07",
+      "statement_date": "2026-09-16",
+      "status": "posted",
+      "disputed": false
+    },
+    "txn_31588_1": {
+      "transaction_id": "txn_31588_1",
+      "customer_id": "cu_31588",
+      "account_id": "acct_31588",
+      "card_id": "card_31588_1",
+      "merchant": "PixelPlay Games",
+      "amount": 59.99,
+      "date": "2026-10-05",
+      "statement_date": "2026-10-09",
+      "status": "posted",
+      "disputed": false
+    },
+    "txn_31588_2": {
+      "transaction_id": "txn_31588_2",
+      "customer_id": "cu_31588",
+      "account_id": "acct_31588",
+      "card_id": "card_31588_1",
+      "merchant": "HomeNest Furniture",
+      "amount": 310.0,
+      "date": "2026-08-04",
+      "statement_date": "2026-08-14",
+      "status": "posted",
+      "disputed": false
+    },
+    "txn_44026_1": {
+      "transaction_id": "txn_44026_1",
+      "customer_id": "cu_44026",
+      "account_id": "acct_44026",
+      "card_id": "card_44026_1",
+      "merchant": "Sunrise Pharmacy",
+      "amount": 23.15,
+      "date": "2026-10-16",
+      "statement_date": "2026-10-18",
+      "status": "posted",
+      "disputed": false
+    },
+    "txn_44026_2": {
+      "transaction_id": "txn_44026_2",
+      "customer_id": "cu_44026",
+      "account_id": "acct_44026",
+      "card_id": "card_44026_1",
+      "merchant": "CloudNine Hosting",
+      "amount": 14.99,
+      "date": "2026-09-22",
+      "statement_date": "2026-09-27",
+      "status": "posted",
+      "disputed": false
+    },
+    "txn_52371_1": {
+      "transaction_id": "txn_52371_1",
+      "customer_id": "cu_52371",
+      "account_id": "acct_52371",
+      "card_id": "card_52371_1",
+      "merchant": "Corner Auto Parts",
+      "amount": 112.3,
+      "date": "2026-10-09",
+      "statement_date": "2026-10-12",
+      "status": "posted",
+      "disputed": false
+    },
+    "txn_60845_1": {
+      "transaction_id": "txn_60845_1",
+      "customer_id": "cu_60845",
+      "account_id": "acct_60845",
+      "card_id": "card_60845_1",
+      "merchant": "Nordic Outfitters",
+      "amount": 148.0,
+      "date": "2026-09-26",
+      "statement_date": "2026-10-02",
+      "status": "posted",
+      "disputed": false
+    },
+    "txn_67199_1": {
+      "transaction_id": "txn_67199_1",
+      "customer_id": "cu_67199",
+      "account_id": "acct_67199",
+      "card_id": "card_67199_1",
+      "merchant": "Summit Hardware",
+      "amount": 203.75,
+      "date": "2026-09-17",
+      "statement_date": "2026-09-24",
+      "status": "posted",
+      "disputed": false
+    },
+    "txn_71530_1": {
+      "transaction_id": "txn_71530_1",
+      "customer_id": "cu_71530",
+      "account_id": "acct_71530",
+      "card_id": "card_71530_1",
+      "merchant": "Casa Verde Market",
+      "amount": 64.1,
+      "date": "2026-10-17",
+      "statement_date": "2026-10-19",
+      "status": "posted",
+      "disputed": false
+    },
+    "txn_71530_2": {
+      "transaction_id": "txn_71530_2",
+      "customer_id": "cu_71530",
+      "account_id": "acct_71530",
+      "card_id": "card_71530_2",
+      "merchant": "TravelNow Airfare",
+      "amount": 412.0,
+      "date": "2026-09-23",
+      "statement_date": "2026-10-05",
+      "status": "posted",
+      "disputed": false
+    },
+    "txn_78264_1": {
+      "transaction_id": "txn_78264_1",
+      "customer_id": "cu_78264",
+      "account_id": "acct_78264",
+      "card_id": "card_78264_1",
+      "merchant": "Harbor Sushi",
+      "amount": 71.2,
+      "date": "2026-10-08",
+      "statement_date": "2026-10-11",
+      "status": "posted",
+      "disputed": false
+    },
+    "txn_78264_2": {
+      "transaction_id": "txn_78264_2",
+      "customer_id": "cu_78264",
+      "account_id": "acct_78264",
+      "card_id": "card_78264_1",
+      "merchant": "Digital Depot",
+      "amount": 249.99,
+      "date": "2026-07-17",
+      "statement_date": "2026-07-31",
+      "status": "posted",
+      "disputed": false
+    },
+    "txn_83912_1": {
+      "transaction_id": "txn_83912_1",
+      "customer_id": "cu_83912",
+      "account_id": "acct_83912",
+      "card_id": "card_83912_1",
+      "merchant": "StreamFlix",
+      "amount": 15.99,
+      "date": "2026-09-25",
+      "statement_date": "2026-09-30",
+      "status": "posted",
+      "disputed": true
+    },
+    "txn_83912_2": {
+      "transaction_id": "txn_83912_2",
+      "customer_id": "cu_83912",
+      "account_id": "acct_83912",
+      "card_id": "card_83912_1",
+      "merchant": "Peak Fitness",
+      "amount": 45.0,
+      "date": "2026-09-22",
+      "statement_date": "2026-09-30",
+      "status": "posted",
+      "disputed": false
+    },
+    "txn_90077_1": {
+      "transaction_id": "txn_90077_1",
+      "customer_id": "cu_90077",
+      "account_id": "acct_90077",
+      "card_id": "card_90077_1",
+      "merchant": "Delta Bistro",
+      "amount": 98.4,
+      "date": "2026-08-21",
+      "statement_date": "2026-08-30",
+      "status": "posted",
+      "disputed": false
+    },
+    "txn_90077_2": {
+      "transaction_id": "txn_90077_2",
+      "customer_id": "cu_90077",
+      "account_id": "acct_90077",
+      "card_id": "card_90077_1",
+      "merchant": "Wellness Spa",
+      "amount": 175.0,
+      "date": "2026-08-15",
+      "statement_date": "2026-08-26",
+      "status": "posted",
+      "disputed": false
+    },
+    "txn_95408_1": {
+      "transaction_id": "txn_95408_1",
+      "customer_id": "cu_95408",
+      "account_id": "acct_95408",
+      "card_id": "card_95408_1",
+      "merchant": "Lumiere Boutique",
+      "amount": 218.6,
+      "date": "2026-10-04",
+      "statement_date": "2026-10-08",
+      "status": "posted",
+      "disputed": false
+    },
+    "txn_99650_1": {
+      "transaction_id": "txn_99650_1",
+      "customer_id": "cu_99650",
+      "account_id": "acct_99650",
+      "card_id": "card_99650_1",
+      "merchant": "Quick Fuel Stop",
+      "amount": 42.0,
+      "date": "2026-10-20",
+      "statement_date": "2026-10-21",
+      "status": "posted",
+      "disputed": false
+    },
+    "txn_99650_2": {
+      "transaction_id": "txn_99650_2",
+      "customer_id": "cu_99650",
+      "account_id": "acct_99650",
+      "card_id": "card_99650_1",
+      "merchant": "Online Electronics",
+      "amount": 389.0,
+      "date": "2026-10-19",
+      "statement_date": "2026-10-21",
+      "status": "posted",
+      "disputed": false
+    },
+    "txn_99650_3": {
+      "transaction_id": "txn_99650_3",
+      "customer_id": "cu_99650",
+      "account_id": "acct_99650",
+      "card_id": "card_99650_1",
+      "merchant": "Gadget Galaxy",
+      "amount": 249.0,
+      "date": "2026-10-18",
+      "statement_date": "2026-10-21",
+      "status": "posted",
+      "disputed": false
+    }
+  },
+  "fees": {
+    "fee_44026_1": {
+      "fee_id": "fee_44026_1",
+      "customer_id": "cu_44026",
+      "account_id": "acct_44026",
+      "type": "late_payment",
+      "amount": 29.0,
+      "date": "2026-10-07",
+      "waived": false,
+      "waived_on": null,
+      "waiver_reason": null
+    },
+    "fee_52371_1": {
+      "fee_id": "fee_52371_1",
+      "customer_id": "cu_52371",
+      "account_id": "acct_52371",
+      "type": "late_payment",
+      "amount": 29.0,
+      "date": "2026-10-17",
+      "waived": false,
+      "waived_on": null,
+      "waiver_reason": null
+    },
+    "fee_52371_2": {
+      "fee_id": "fee_52371_2",
+      "customer_id": "cu_52371",
+      "account_id": "acct_52371",
+      "type": "late_payment",
+      "amount": 29.0,
+      "date": "2026-05-30",
+      "waived": true,
+      "waived_on": "2026-06-01",
+      "waiver_reason": "first_time_request"
+    },
+    "fee_60845_1": {
+      "fee_id": "fee_60845_1",
+      "customer_id": "cu_60845",
+      "account_id": "acct_60845",
+      "type": "returned_payment",
+      "amount": 35.0,
+      "date": "2026-10-13",
+      "waived": false,
+      "waived_on": null,
+      "waiver_reason": null
+    },
+    "fee_60845_2": {
+      "fee_id": "fee_60845_2",
+      "customer_id": "cu_60845",
+      "account_id": "acct_60845",
+      "type": "returned_payment",
+      "amount": 35.0,
+      "date": "2026-06-29",
+      "waived": true,
+      "waived_on": "2026-07-01",
+      "waiver_reason": "first_time_request"
+    },
+    "fee_67199_1": {
+      "fee_id": "fee_67199_1",
+      "customer_id": "cu_67199",
+      "account_id": "acct_67199",
+      "type": "late_payment",
+      "amount": 29.0,
+      "date": "2026-10-15",
+      "waived": false,
+      "waived_on": null,
+      "waiver_reason": null
+    },
+    "fee_67199_2": {
+      "fee_id": "fee_67199_2",
+      "customer_id": "cu_67199",
+      "account_id": "acct_67199",
+      "type": "late_payment",
+      "amount": 29.0,
+      "date": "2025-08-23",
+      "waived": true,
+      "waived_on": "2025-08-25",
+      "waiver_reason": "first_time_request"
+    },
+    "fee_71530_1": {
+      "fee_id": "fee_71530_1",
+      "customer_id": "cu_71530",
+      "account_id": "acct_71530",
+      "type": "over_limit",
+      "amount": 29.0,
+      "date": "2026-09-17",
+      "waived": false,
+      "waived_on": null,
+      "waiver_reason": null
+    },
+    "fee_78264_1": {
+      "fee_id": "fee_78264_1",
+      "customer_id": "cu_78264",
+      "account_id": "acct_78264",
+      "type": "late_payment",
+      "amount": 29.0,
+      "date": "2026-10-09",
+      "waived": false,
+      "waived_on": null,
+      "waiver_reason": null
+    },
+    "fee_95408_1": {
+      "fee_id": "fee_95408_1",
+      "customer_id": "cu_95408",
+      "account_id": "acct_95408",
+      "type": "returned_payment",
+      "amount": 35.0,
+      "date": "2026-10-16",
+      "waived": false,
+      "waived_on": null,
+      "waiver_reason": null
+    }
+  },
+  "disputes": {
+    "disp_txn_83912_1": {
+      "dispute_id": "disp_txn_83912_1",
+      "transaction_id": "txn_83912_1",
+      "customer_id": "cu_83912",
+      "reason": "duplicate_charge",
+      "status": "open"
+    }
+  },
+  "escalations": {},
+  "case_index": {
+    "cu_20417": {
+      "customer_id": "cu_20417",
+      "account_last4": "4821",
+      "date_of_birth": "1988-02-14",
+      "ssn_last4": "3921",
+      "current_balance": 412.37,
+      "active_cards": [
+        {
+          "card_id": "card_20417_1",
+          "last_four": "7305"
+        }
+      ],
+      "disputable_transactions": [
+        {
+          "transaction_id": "txn_20417_1",
+          "merchant": "GreenLeaf Grocers",
+          "amount": 86.42,
+          "days_since_statement": 12
+        },
+        {
+          "transaction_id": "txn_20417_2",
+          "merchant": "Metro Transit",
+          "amount": 34.0,
+          "days_since_statement": 20
+        },
+        {
+          "transaction_id": "txn_20417_3",
+          "merchant": "BrightBooks",
+          "amount": 129.99,
+          "days_since_statement": 41
+        }
+      ],
+      "stale_transactions": [],
+      "waivable_fees": [],
+      "blocked_fees": [],
+      "has_disputable_txn": true,
+      "has_stale_txn": false,
+      "has_waivable_fee": false,
+      "has_blocked_fee": false,
+      "has_active_card": true
+    },
+    "cu_31588": {
+      "customer_id": "cu_31588",
+      "account_last4": "6102",
+      "date_of_birth": "1979-09-03",
+      "ssn_last4": "5530",
+      "current_balance": 238.9,
+      "active_cards": [
+        {
+          "card_id": "card_31588_1",
+          "last_four": "2284"
+        }
+      ],
+      "disputable_transactions": [
+        {
+          "transaction_id": "txn_31588_1",
+          "merchant": "PixelPlay Games",
+          "amount": 59.99,
+          "days_since_statement": 18
+        }
+      ],
+      "stale_transactions": [
+        {
+          "transaction_id": "txn_31588_2",
+          "merchant": "HomeNest Furniture",
+          "amount": 310.0,
+          "days_since_statement": 74
+        }
+      ],
+      "waivable_fees": [],
+      "blocked_fees": [],
+      "has_disputable_txn": true,
+      "has_stale_txn": true,
+      "has_waivable_fee": false,
+      "has_blocked_fee": false,
+      "has_active_card": true
+    },
+    "cu_44026": {
+      "customer_id": "cu_44026",
+      "account_last4": "3359",
+      "date_of_birth": "1992-12-30",
+      "ssn_last4": "8174",
+      "current_balance": 655.1,
+      "active_cards": [
+        {
+          "card_id": "card_44026_1",
+          "last_four": "9911"
+        }
+      ],
+      "disputable_transactions": [
+        {
+          "transaction_id": "txn_44026_1",
+          "merchant": "Sunrise Pharmacy",
+          "amount": 23.15,
+          "days_since_statement": 9
+        },
+        {
+          "transaction_id": "txn_44026_2",
+          "merchant": "CloudNine Hosting",
+          "amount": 14.99,
+          "days_since_statement": 30
+        }
+      ],
+      "stale_transactions": [],
+      "waivable_fees": [
+        {
+          "fee_id": "fee_44026_1",
+          "type": "late_payment",
+          "amount": 29.0
+        }
+      ],
+      "blocked_fees": [],
+      "has_disputable_txn": true,
+      "has_stale_txn": false,
+      "has_waivable_fee": true,
+      "has_blocked_fee": false,
+      "has_active_card": true
+    },
+    "cu_52371": {
+      "customer_id": "cu_52371",
+      "account_last4": "7740",
+      "date_of_birth": "1983-06-18",
+      "ssn_last4": "2046",
+      "current_balance": 502.66,
+      "active_cards": [
+        {
+          "card_id": "card_52371_1",
+          "last_four": "1357"
+        }
+      ],
+      "disputable_transactions": [
+        {
+          "transaction_id": "txn_52371_1",
+          "merchant": "Corner Auto Parts",
+          "amount": 112.3,
+          "days_since_statement": 15
+        }
+      ],
+      "stale_transactions": [],
+      "waivable_fees": [],
+      "blocked_fees": [
+        {
+          "fee_id": "fee_52371_1",
+          "type": "late_payment",
+          "amount": 29.0
+        }
+      ],
+      "has_disputable_txn": true,
+      "has_stale_txn": false,
+      "has_waivable_fee": false,
+      "has_blocked_fee": true,
+      "has_active_card": true
+    },
+    "cu_60845": {
+      "customer_id": "cu_60845",
+      "account_last4": "2913",
+      "date_of_birth": "1975-04-09",
+      "ssn_last4": "6618",
+      "current_balance": 301.45,
+      "active_cards": [
+        {
+          "card_id": "card_60845_1",
+          "last_four": "5568"
+        }
+      ],
+      "disputable_transactions": [
+        {
+          "transaction_id": "txn_60845_1",
+          "merchant": "Nordic Outfitters",
+          "amount": 148.0,
+          "days_since_statement": 25
+        }
+      ],
+      "stale_transactions": [],
+      "waivable_fees": [],
+      "blocked_fees": [
+        {
+          "fee_id": "fee_60845_1",
+          "type": "returned_payment",
+          "amount": 35.0
+        }
+      ],
+      "has_disputable_txn": true,
+      "has_stale_txn": false,
+      "has_waivable_fee": false,
+      "has_blocked_fee": true,
+      "has_active_card": true
+    },
+    "cu_67199": {
+      "customer_id": "cu_67199",
+      "account_last4": "8826",
+      "date_of_birth": "1990-01-22",
+      "ssn_last4": "1493",
+      "current_balance": 744.2,
+      "active_cards": [
+        {
+          "card_id": "card_67199_1",
+          "last_four": "6672"
+        }
+      ],
+      "disputable_transactions": [
+        {
+          "transaction_id": "txn_67199_1",
+          "merchant": "Summit Hardware",
+          "amount": 203.75,
+          "days_since_statement": 33
+        }
+      ],
+      "stale_transactions": [],
+      "waivable_fees": [
+        {
+          "fee_id": "fee_67199_1",
+          "type": "late_payment",
+          "amount": 29.0
+        }
+      ],
+      "blocked_fees": [],
+      "has_disputable_txn": true,
+      "has_stale_txn": false,
+      "has_waivable_fee": true,
+      "has_blocked_fee": false,
+      "has_active_card": true
+    },
+    "cu_71530": {
+      "customer_id": "cu_71530",
+      "account_last4": "1675",
+      "date_of_birth": "1986-11-27",
+      "ssn_last4": "7702",
+      "current_balance": 889.0,
+      "active_cards": [
+        {
+          "card_id": "card_71530_1",
+          "last_four": "4410"
+        },
+        {
+          "card_id": "card_71530_2",
+          "last_four": "9027"
+        }
+      ],
+      "disputable_transactions": [
+        {
+          "transaction_id": "txn_71530_1",
+          "merchant": "Casa Verde Market",
+          "amount": 64.1,
+          "days_since_statement": 8
+        },
+        {
+          "transaction_id": "txn_71530_2",
+          "merchant": "TravelNow Airfare",
+          "amount": 412.0,
+          "days_since_statement": 22
+        }
+      ],
+      "stale_transactions": [],
+      "waivable_fees": [],
+      "blocked_fees": [],
+      "has_disputable_txn": true,
+      "has_stale_txn": false,
+      "has_waivable_fee": false,
+      "has_blocked_fee": false,
+      "has_active_card": true
+    },
+    "cu_78264": {
+      "customer_id": "cu_78264",
+      "account_last4": "5048",
+      "date_of_birth": "1981-08-15",
+      "ssn_last4": "4385",
+      "current_balance": 177.52,
+      "active_cards": [
+        {
+          "card_id": "card_78264_1",
+          "last_four": "3046"
+        }
+      ],
+      "disputable_transactions": [
+        {
+          "transaction_id": "txn_78264_1",
+          "merchant": "Harbor Sushi",
+          "amount": 71.2,
+          "days_since_statement": 16
+        }
+      ],
+      "stale_transactions": [
+        {
+          "transaction_id": "txn_78264_2",
+          "merchant": "Digital Depot",
+          "amount": 249.99,
+          "days_since_statement": 88
+        }
+      ],
+      "waivable_fees": [
+        {
+          "fee_id": "fee_78264_1",
+          "type": "late_payment",
+          "amount": 29.0
+        }
+      ],
+      "blocked_fees": [],
+      "has_disputable_txn": true,
+      "has_stale_txn": true,
+      "has_waivable_fee": true,
+      "has_blocked_fee": false,
+      "has_active_card": true
+    },
+    "cu_83912": {
+      "customer_id": "cu_83912",
+      "account_last4": "9387",
+      "date_of_birth": "1994-03-05",
+      "ssn_last4": "9051",
+      "current_balance": 366.8,
+      "active_cards": [
+        {
+          "card_id": "card_83912_1",
+          "last_four": "8120"
+        }
+      ],
+      "disputable_transactions": [
+        {
+          "transaction_id": "txn_83912_2",
+          "merchant": "Peak Fitness",
+          "amount": 45.0,
+          "days_since_statement": 27
+        }
+      ],
+      "stale_transactions": [],
+      "waivable_fees": [],
+      "blocked_fees": [],
+      "has_disputable_txn": true,
+      "has_stale_txn": false,
+      "has_waivable_fee": false,
+      "has_blocked_fee": false,
+      "has_active_card": true
+    },
+    "cu_90077": {
+      "customer_id": "cu_90077",
+      "account_last4": "6631",
+      "date_of_birth": "1977-10-12",
+      "ssn_last4": "2860",
+      "current_balance": 528.33,
+      "active_cards": [
+        {
+          "card_id": "card_90077_1",
+          "last_four": "4752"
+        }
+      ],
+      "disputable_transactions": [
+        {
+          "transaction_id": "txn_90077_1",
+          "merchant": "Delta Bistro",
+          "amount": 98.4,
+          "days_since_statement": 58
+        }
+      ],
+      "stale_transactions": [
+        {
+          "transaction_id": "txn_90077_2",
+          "merchant": "Wellness Spa",
+          "amount": 175.0,
+          "days_since_statement": 62
+        }
+      ],
+      "waivable_fees": [],
+      "blocked_fees": [],
+      "has_disputable_txn": true,
+      "has_stale_txn": true,
+      "has_waivable_fee": false,
+      "has_blocked_fee": false,
+      "has_active_card": true
+    },
+    "cu_95408": {
+      "customer_id": "cu_95408",
+      "account_last4": "1204",
+      "date_of_birth": "1968-07-29",
+      "ssn_last4": "3317",
+      "current_balance": 691.75,
+      "active_cards": [
+        {
+          "card_id": "card_95408_1",
+          "last_four": "2599"
+        }
+      ],
+      "disputable_transactions": [
+        {
+          "transaction_id": "txn_95408_1",
+          "merchant": "Lumiere Boutique",
+          "amount": 218.6,
+          "days_since_statement": 19
+        }
+      ],
+      "stale_transactions": [],
+      "waivable_fees": [
+        {
+          "fee_id": "fee_95408_1",
+          "type": "returned_payment",
+          "amount": 35.0
+        }
+      ],
+      "blocked_fees": [],
+      "has_disputable_txn": true,
+      "has_stale_txn": false,
+      "has_waivable_fee": true,
+      "has_blocked_fee": false,
+      "has_active_card": true
+    },
+    "cu_99650": {
+      "customer_id": "cu_99650",
+      "account_last4": "7519",
+      "date_of_birth": "1999-05-16",
+      "ssn_last4": "5894",
+      "current_balance": 95.1,
+      "active_cards": [
+        {
+          "card_id": "card_99650_1",
+          "last_four": "6038"
+        }
+      ],
+      "disputable_transactions": [
+        {
+          "transaction_id": "txn_99650_1",
+          "merchant": "Quick Fuel Stop",
+          "amount": 42.0,
+          "days_since_statement": 6
+        },
+        {
+          "transaction_id": "txn_99650_2",
+          "merchant": "Online Electronics",
+          "amount": 389.0,
+          "days_since_statement": 6
+        },
+        {
+          "transaction_id": "txn_99650_3",
+          "merchant": "Gadget Galaxy",
+          "amount": 249.0,
+          "days_since_statement": 6
+        }
+      ],
+      "stale_transactions": [],
+      "waivable_fees": [],
+      "blocked_fees": [],
+      "has_disputable_txn": true,
+      "has_stale_txn": false,
+      "has_waivable_fee": false,
+      "has_blocked_fee": false,
+      "has_active_card": true
+    }
+  }
+}

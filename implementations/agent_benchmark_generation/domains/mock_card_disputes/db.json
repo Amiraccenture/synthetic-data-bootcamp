@@ -1,0 +1,143 @@
+{
+  "customers": {
+    "cust_alice": {
+      "customer_id": "cust_alice",
+      "name": "Alice Chen",
+      "email": "alice@example.com",
+      "dob": "1985-03-12"
+    },
+    "cust_bob": {
+      "customer_id": "cust_bob",
+      "name": "Bob Martinez",
+      "email": "bob@example.com",
+      "dob": "1990-07-22"
+    },
+    "cust_carol": {
+      "customer_id": "cust_carol",
+      "name": "Carol Nguyen",
+      "email": "carol@example.com",
+      "dob": "1978-11-05"
+    }
+  },
+  "cards": {
+    "card_alice_1": {
+      "card_id": "card_alice_1",
+      "customer_id": "cust_alice",
+      "last_four": "4821",
+      "status": "active"
+    },
+    "card_bob_1": {
+      "card_id": "card_bob_1",
+      "customer_id": "cust_bob",
+      "last_four": "5590",
+      "status": "active"
+    },
+    "card_bob_2": {
+      "card_id": "card_bob_2",
+      "customer_id": "cust_bob",
+      "last_four": "6301",
+      "status": "blocked"
+    },
+    "card_carol_1": {
+      "card_id": "card_carol_1",
+      "customer_id": "cust_carol",
+      "last_four": "7788",
+      "status": "active"
+    }
+  },
+  "transactions": {
+    "txn_1001": {
+      "transaction_id": "txn_1001",
+      "card_id": "card_alice_1",
+      "customer_id": "cust_alice",
+      "merchant": "QuickMart",
+      "amount": 54.2,
+      "date": "2026-10-11",
+      "age_days": 10,
+      "status": "posted",
+      "disputed": false,
+      "disputable": true
+    },
+    "txn_1002": {
+      "transaction_id": "txn_1002",
+      "card_id": "card_alice_1",
+      "customer_id": "cust_alice",
+      "merchant": "StreamBox",
+      "amount": 12.99,
+      "date": "2026-04-04",
+      "age_days": 200,
+      "status": "posted",
+      "disputed": false,
+      "disputable": false
+    },
+    "txn_1003": {
+      "transaction_id": "txn_1003",
+      "card_id": "card_alice_1",
+      "customer_id": "cust_alice",
+      "merchant": "CoffeeHub",
+      "amount": 6.5,
+      "date": "2026-10-20",
+      "age_days": 1,
+      "status": "pending",
+      "disputed": false,
+      "disputable": false
+    },
+    "txn_2001": {
+      "transaction_id": "txn_2001",
+      "card_id": "card_bob_1",
+      "customer_id": "cust_bob",
+      "merchant": "TechStore",
+      "amount": 899.0,
+      "date": "2026-10-16",
+      "age_days": 5,
+      "status": "posted",
+      "disputed": false,
+      "disputable": true
+    },
+    "txn_2002": {
+      "transaction_id": "txn_2002",
+      "card_id": "card_bob_1",
+      "customer_id": "cust_bob",
+      "merchant": "GymPlus",
+      "amount": 40.0,
+      "date": "2026-09-21",
+      "age_days": 30,
+      "status": "posted",
+      "disputed": true,
+      "disputable": false
+    },
+    "txn_3001": {
+      "transaction_id": "txn_3001",
+      "card_id": "card_carol_1",
+      "customer_id": "cust_carol",
+      "merchant": "AirFly",
+      "amount": 320.0,
+      "date": "2026-10-06",
+      "age_days": 15,
+      "status": "posted",
+      "disputed": false,
+      "disputable": true
+    },
+    "txn_3002": {
+      "transaction_id": "txn_3002",
+      "card_id": "card_carol_1",
+      "customer_id": "cust_carol",
+      "merchant": "HotelX",
+      "amount": 210.0,
+      "date": "2026-08-12",
+      "age_days": 70,
+      "status": "posted",
+      "disputed": false,
+      "disputable": false
+    }
+  },
+  "disputes": {
+    "disp_txn_2002": {
+      "dispute_id": "disp_txn_2002",
+      "transaction_id": "txn_2002",
+      "customer_id": "cust_bob",
+      "reason": "duplicate_charge",
+      "status": "open"
+    }
+  }
+}

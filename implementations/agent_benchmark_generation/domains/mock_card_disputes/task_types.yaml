@@ -1,0 +1,13 @@
+task_types:
+  inquiry:
+    description: Read-only lookup of a transaction, card, or dispute status
+    allow_write: false
+  open_dispute:
+    description: Open a dispute on an eligible posted transaction after lookup
+    allow_write: true
+  block_card:
+    description: Block a lost or stolen card after verifying ownership
+    allow_write: true
+  refuse_dispute:
+    description: Lookup only; agent must refuse to dispute an ineligible transaction
+    allow_write: false

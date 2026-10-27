@@ -1,0 +1,18 @@
+# One entry per kind of task you want in your benchmark.
+# allow_write=false  -> oracle must NOT call any WRITE tool (read-only / refusal)
+# allow_write=true   -> oracle MUST call at least one WRITE tool
+# The verifier enforces this against each tool's ToolType in tools.py.
+# TODO: rename/extend these to your real task mix.
+task_types:
+  inquiry:
+    description: Read-only record lookup
+    allow_write: false
+  update:
+    description: Update a record's detail after lookup
+    allow_write: true
+  close:
+    description: Close an open record after lookup
+    allow_write: true
+  refuse_close:
+    description: Lookup only; agent should refuse to close a non-open record
+    allow_write: false

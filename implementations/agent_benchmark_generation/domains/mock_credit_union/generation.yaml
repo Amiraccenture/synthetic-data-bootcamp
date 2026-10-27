@@ -1,0 +1,68 @@
+# =============================================================================
+# Credit-union generation config
+# =============================================================================
+# The sampler draws one customer per task from `case_index` (a generation-only
+# table that no tool reads, so it cannot leak answers to the agent), then shows
+# the generator that customer's verification details and pre-computed lists of
+# disputable / stale transactions and waivable / blocked fees.
+#
+# NOTE: the generation prompt includes only the first 1,500 characters of
+# policy.md. The policy's dispute and fee rules are therefore NOT visible to the
+# generator; these eligibility filters, the entity lists, and the task-type
+# descriptions in task_types.yaml carry those rules instead.
+# =============================================================================
+
+agent_role: "credit card customer service agent"
+
+primary_collection: case_index
+id_field: customer_id
+
+related:
+  customer_id:
+    collection: customers
+    via: customer_id
+    fields: [name]
+
+# What the generator sees about the sampled customer. Includes everything the
+# oracle needs: verify_identity arguments and the ids to act on.
+context_fields:
+  - customer_id
+  - account_last4
+  - date_of_birth
+  - ssn_last4
+  - current_balance
+  - active_cards
+  - disputable_transactions
+  - stale_transactions
+  - waivable_fees
+  - blocked_fees
+
+persona_related: customer_id
+persona_field: name
+
+# Keep generated oracles valid by construction. Types not listed here (balance,
+# address, closure) can use any customer.
+eligibility:
+  refuse_dispute:
+    has_stale_txn: [true]
+  fee_waiver:
+    has_waivable_fee: [true]
+  lost_card_report:
+    has_active_card: [true]
+
+communicate_hints:
+  balance_inquiry: >
+    Include the exact current_balance as plain digits with a decimal point and
+    no $ sign or thousands separator, e.g. ["412.37"].
+  refuse_dispute: >
+    The agent must cite the 60-day dispute window: ["60 days"].
+  fee_waiver: 'The agent confirms the fee was waived: ["waived"].'
+  lost_card_report: >
+    The agent confirms a replacement card and zero liability after the report:
+    ["replacement", "$0"].
+  address_update: >
+    The agent reads the new address back, including the street name from the
+    requested address, e.g. ["1450 Peachtree St"].
+  account_closure_request: >
+    The agent says the balance must still be paid and a supervisor will follow
+    up: ["supervisor", "balance"].

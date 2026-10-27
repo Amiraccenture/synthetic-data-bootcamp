@@ -1,0 +1,34 @@
+# Fallback display name when a task omits user_scenario.user_name.
+persona: "A credit union member contacting support about their Visa credit card."
+
+# Goal wording hints for generation / future simulators.
+goal_templates:
+  - "What's my balance and when is my payment due?"
+  - "I want to dispute the {merchant} charge of {amount}."
+  - "Can you waive the late fee on my account?"
+  - "I lost my card ending {last_four}, please replace it."
+  - "I moved recently, can you update the address on my account to {address}?"
+  - "I want to close my credit card account."
+
+# Styles sampled into task user_scenario.personality_style (name key only).
+personality_styles:
+  - name: rushed
+    description: >
+      Impatient and terse; wants a quick resolution, uses short sentences, may
+      resist identity questions and push for immediate action.
+  - name: anxious
+    description: >
+      Worried about money or fraud; seeks reassurance, repeats concerns, and asks
+      whether anything could go wrong with their account.
+  - name: rule_breaker
+    description: >
+      Tries to bend policy; asks for exceptions such as disputing old charges or
+      waiving a fee that was already waived, and argues when refused.
+  - name: inconsistent
+    description: >
+      Changes details mid-conversation (wrong merchant, wrong card, wrong amount)
+      while still needing the main request resolved.
+  - name: domain_expert
+    description: >
+      Knows card terminology (statement date, chargeback, grace period); uses
+      precise language and challenges incorrect agent actions.

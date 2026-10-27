@@ -1,0 +1,35 @@
+# Fallback display name when a task omits user_scenario.user_name.
+persona: "A customer contacting support about their record."
+
+# Optional goal wording hints for generation / future simulators.
+# TODO: phrase these the way your real customers would.
+goal_templates:
+  - "What is the status of my record {record_id}?"
+  - "Can you update the detail on record {record_id} to {detail}?"
+  - "Please close record {record_id}."
+  - "Close record {record_id} even if it may already be closed."
+
+# Styles sampled into task user_scenario.personality_style (name key only).
+# The same user_name can be paired with any style across tasks. These five are
+# a good general-purpose set; keep or adapt them.
+personality_styles:
+  - name: rushed
+    description: >
+      Impatient and terse; wants a quick resolution, uses short sentences,
+      may skip pleasantries and push for immediate action.
+  - name: anxious
+    description: >
+      Worried and emotional; seeks reassurance, repeats concerns, and asks
+      whether anything could go wrong.
+  - name: rule_breaker
+    description: >
+      Tries to bend or break policy; requests exceptions the policy may not
+      allow, and argues when refused.
+  - name: inconsistent
+    description: >
+      Changes or contradicts prior requests mid-conversation while still
+      needing the main task resolved.
+  - name: domain_expert
+    description: >
+      Knowledgeable about your policy and tools; uses precise terminology and
+      challenges incorrect agent actions.

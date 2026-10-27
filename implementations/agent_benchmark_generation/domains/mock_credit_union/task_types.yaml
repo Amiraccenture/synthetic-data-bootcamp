@@ -1,0 +1,66 @@
+# v1 task types (7 of the 19 in task_types.full.yaml).
+#
+# The sampler draws uniformly from THIS file, so every type listed here must be
+# fully supported by tools.py, generation.yaml and verify.py. The remaining
+# types live in task_types.full.yaml and can be promoted here as tools are added.
+#
+# allow_write: true  -> oracle must use at least one WRITE tool
+# allow_write: false -> read-only; agent looks up or refuses, nothing is written
+#
+# Descriptions are shown verbatim to the task generator, so they spell out the
+# exact write actions the policy requires.
+
+task_types:
+
+  balance_inquiry:
+    allow_write: false
+    description: >
+      Customer asks for their current balance, available credit, or next due
+      date. Agent verifies identity, looks up the account, and reports the
+      figures. Nothing is changed. The agent gives only this customer's figures.
+
+  fee_waiver:
+    allow_write: true
+    description: >
+      Customer requests removal of a late payment or returned payment fee and is
+      eligible (no prior waiver of that fee type within the policy window).
+      Agent verifies identity, checks fee history, and waives exactly one fee.
+      The agent confirms the fee and amount with the customer and records the
+      reason for the waiver.
+
+  address_update:
+    allow_write: true
+    description: >
+      Customer requests a change to the mailing or billing address on file.
+      Agent verifies identity, asks for the new address, reads it back and
+      gets the customer's confirmation, then updates the address on the account.
+      If the caller is an authorized user rather than the primary cardholder,
+      the agent must not change the primary cardholder's address and should
+      explain that only the primary cardholder can request that change.
+
+  lost_card_report:
+    allow_write: true
+    description: >
+      Customer reports a specific card lost or stolen. Agent verifies identity,
+      confirms which card, replaces it (which flags the account), and states the
+      customer's liability after notification is $0. The agent also tells the
+      customer to report the loss in writing.
+
+  refuse_dispute:
+    allow_write: false
+    description: >
+      Customer asks to dispute a charge that is more than 60 days past the
+      statement date on which it first appeared. Agent verifies identity, looks
+      up the transaction, and refuses, explaining the 60-day window. The agent
+      suggests the customer contact the merchant directly. No dispute is opened
+      and nothing is written.
+
+  account_closure_request:
+    allow_write: true
+    description: >
+      Customer asks to close their credit card account. Agent verifies identity
+      and explains that the outstanding balance must still be paid after
+      closure. The agent must not close the account itself. It escalates the
+      request to a supervisor and tells the customer a supervisor will follow up.
+      The oracle records this as an escalate_to_human action with reason
+      supervisor_request for the verified customer.

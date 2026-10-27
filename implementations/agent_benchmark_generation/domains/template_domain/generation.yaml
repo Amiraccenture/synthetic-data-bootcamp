@@ -1,0 +1,62 @@
+# =============================================================================
+# Domain generation config (required)
+# =============================================================================
+# This is the main NO-CODE extension surface. It tells the sampler and the
+# generation prompt how to bind to YOUR db.json shape. You should be able to
+# retarget a new domain by editing this file alone — no Python sampler/prompt
+# changes needed. Loaded into DomainBundle.generation (schemas/generation.py).
+# =============================================================================
+
+# Role label for the agent under test. Used in the generation prompt
+# ("The agent under test is a …") and the runtime agent system prompt.
+agent_role: "customer service agent"
+
+# Top-level table in db.json the sampler draws a random record from per task.
+primary_collection: records
+
+# Field on each primary record used as the main entity id (required in the
+# generated oracle's tool arguments and referenced by the user scenario).
+id_field: record_id
+
+# Foreign-key joins from the primary record to other db.json tables.
+#   collection: the table to look up
+#   via:        field on the PRIMARY record holding the lookup key
+#   fields:     related columns to show the generator (prompt-only context)
+related:
+  customer_id:
+    collection: customers
+    via: customer_id
+    fields: [name, email]
+
+# Primary-record columns included in the generator's entity_context snapshot
+# (prompt-only; helps it respect state, e.g. status before a close).
+# Omit/empty to include all fields.
+context_fields:
+  - record_id
+  - customer_id
+  - status
+  - detail
+
+# Optional: pull user_scenario.user_name from a related row.
+persona_related: customer_id
+persona_field: name
+
+# Optional per-task_type filters on which primary records are eligible.
+# Keeps "close" tasks on open records and "refuse_close" on non-open ones, so
+# generated oracles are valid by construction. Keys must be task_types.yaml keys
+# and fields must exist on every primary record.
+eligibility:
+  close:
+    status: [open]
+  refuse_close:
+    status: [closed]
+
+# Optional per-task_type hints for evaluation_criteria.communicate_info.
+# Keys must match task_types.yaml (typos are caught at validation time).
+communicate_hints:
+  inquiry: "Usually []. Add substrings only if the user must hear specific facts back."
+  close: 'Include a short confirmation substring, e.g. ["closed"].'
+  refuse_close: 'Include the refusal substring from policy, e.g. ["cannot be closed"].'
+  update: >
+    Include a substring of the new detail value that must appear in the agent
+    reply (match the detail argument).
