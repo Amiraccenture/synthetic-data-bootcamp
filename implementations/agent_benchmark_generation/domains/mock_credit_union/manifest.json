@@ -1,5 +1,5 @@
 {
   "name": "mock_credit_union",
   "version": "0.1.0",
-  "description": "Credit card servicing agent for a mock credit union: identity verification, balance inquiries, disputes, fee waivers, lost cards, and fraud escalation (v1: 7 of 19 planned task types)."
+  "description": "Credit card servicing agent for a mock credit union: identity verification, balance inquiries, disputes, fee waivers, lost cards, and fraud escalation (v1: 6 of 19 planned task types)."
 }

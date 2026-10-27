@@ -18,16 +18,15 @@ from aieng.syn_data.synbench.schemas.tasks import Task
 
 CUSTOMER_SCOPED = {
     "get_account", "list_cards", "list_transactions", "get_transaction",
-    "list_fees", "open_dispute", "waive_fee", "replace_card",
+    "list_fees", "open_dispute", "waive_fee", "replace_card", "update_address",
 }
 
 # Writes the policy requires for each write-type task.
 REQUIRED_WRITES = {
-    "transaction_dispute": {"open_dispute"},
     "fee_waiver": {"waive_fee"},
     "lost_card_report": {"replace_card"},
-    # Policy section 7: flag the account (escalate) AND issue a replacement card.
-    "fraud_escalation": {"escalate_to_human", "replace_card"},
+    "address_update": {"update_address"},
+    "account_closure_request": {"escalate_to_human"},
 }
 
 

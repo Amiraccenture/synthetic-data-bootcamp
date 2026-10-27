@@ -7,73 +7,85 @@
       "customer_id": "cu_20417",
       "name": "Maya Patel",
       "date_of_birth": "1988-02-14",
-      "ssn_last4": "3921"
+      "ssn_last4": "3921",
+      "address": "210 Juniper St NE, Atlanta, GA 30308"
     },
     "cu_31588": {
       "customer_id": "cu_31588",
       "name": "Daniel Okafor",
       "date_of_birth": "1979-09-03",
-      "ssn_last4": "5530"
+      "ssn_last4": "5530",
+      "address": "845 Cedar Ave, Decatur, GA 30030"
     },
     "cu_44026": {
       "customer_id": "cu_44026",
       "name": "Priya Raman",
       "date_of_birth": "1992-12-30",
-      "ssn_last4": "8174"
+      "ssn_last4": "8174",
+      "address": "77 Magnolia Rd, Marietta, GA 30060"
     },
     "cu_52371": {
       "customer_id": "cu_52371",
       "name": "Tomás Rivera",
       "date_of_birth": "1983-06-18",
-      "ssn_last4": "2046"
+      "ssn_last4": "2046",
+      "address": "3012 Shady Oak Dr, Atlanta, GA 30305"
     },
     "cu_60845": {
       "customer_id": "cu_60845",
       "name": "Hannah Lindqvist",
       "date_of_birth": "1975-04-09",
-      "ssn_last4": "6618"
+      "ssn_last4": "6618",
+      "address": "512 Oak Hollow Dr, Roswell, GA 30075"
     },
     "cu_67199": {
       "customer_id": "cu_67199",
       "name": "Marcus Bell",
       "date_of_birth": "1990-01-22",
-      "ssn_last4": "1493"
+      "ssn_last4": "1493",
+      "address": "96 Birch Ln, Smyrna, GA 30080"
     },
     "cu_71530": {
       "customer_id": "cu_71530",
       "name": "Sofia Alvarez",
       "date_of_birth": "1986-11-27",
-      "ssn_last4": "7702"
+      "ssn_last4": "7702",
+      "address": "430 Pine Crest Way, Alpharetta, GA 30009"
     },
     "cu_78264": {
       "customer_id": "cu_78264",
       "name": "Kenji Watanabe",
       "date_of_birth": "1981-08-15",
-      "ssn_last4": "4385"
+      "ssn_last4": "4385",
+      "address": "18 Harbor View Ct, Savannah, GA 31401"
     },
     "cu_83912": {
       "customer_id": "cu_83912",
       "name": "Grace Thompson",
       "date_of_birth": "1994-03-05",
-      "ssn_last4": "9051"
+      "ssn_last4": "9051",
+      "address": "702 Willow St, Athens, GA 30601"
     },
     "cu_90077": {
       "customer_id": "cu_90077",
       "name": "Omar Haddad",
       "date_of_birth": "1977-10-12",
-      "ssn_last4": "2860"
+      "ssn_last4": "2860",
+      "address": "5 Lakeside Dr, Columbus, GA 31901"
     },
     "cu_95408": {
       "customer_id": "cu_95408",
       "name": "Beatrice Moreau",
       "date_of_birth": "1968-07-29",
-      "ssn_last4": "3317"
+      "ssn_last4": "3317",
+      "address": "263 Azalea Blvd, Macon, GA 31201"
     },
     "cu_99650": {
       "customer_id": "cu_99650",
       "name": "Liam O'Connor",
       "date_of_birth": "1999-05-16",
-      "ssn_last4": "5894"
+      "ssn_last4": "5894",
+      "address": "1188 Ridgeway Pl, Augusta, GA 30901"
     }
   },
   "accounts": {

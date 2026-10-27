@@ -1,7 +1,8 @@
 """Mock credit-union credit-card servicing toolkit.
 
 Tools for a card-servicing agent: verify identity, read account data, and make
-four kinds of changes (open a dispute, waive a fee, replace a card, escalate).
+five kinds of changes (open a dispute, waive a fee, replace a card, update the
+address, escalate).
 
 Design rules that keep outcome-based (db_hash) scoring sound:
 
@@ -190,6 +191,23 @@ def get_tool_specs() -> list[ToolSpec]:
                     "reason": {"type": "string", "enum": REPLACE_REASONS},
                 },
                 "required": ["customer_id", "card_id", "reason"],
+            },
+            tool_type=ToolType.WRITE,
+        ),
+        ToolSpec(
+            name="update_address",
+            description=(
+                "Replace the address on the customer's account. Only the primary "
+                "cardholder may request this. Read the new address back to the "
+                "customer and get their confirmation before calling."
+            ),
+            parameters={
+                "type": "object",
+                "properties": {
+                    "customer_id": customer_id,
+                    "new_address": {"type": "string"},
+                },
+                "required": ["customer_id", "new_address"],
             },
             tool_type=ToolType.WRITE,
         ),
@@ -407,6 +425,15 @@ class ToolKit:
         }
         self._account(customer_id)["card_replacement_reason"] = reason
         return {"old_card_id": card_id, "replacement_card_id": new_id, "status": "issued"}
+
+    def update_address(self, customer_id: str, new_address: str) -> dict[str, Any]:
+        """Replace the address on the customer's record."""
+        address = new_address.strip()
+        if not address:
+            raise ValueError("New address cannot be empty.")
+        self._account(customer_id)
+        self.db["customers"][customer_id]["address"] = address
+        return {"customer_id": customer_id, "address": address, "status": "updated"}
 
     def escalate_to_human(
         self, reason: str, customer_id: str | None = None

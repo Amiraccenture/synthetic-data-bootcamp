@@ -41,35 +41,28 @@ persona_related: customer_id
 persona_field: name
 
 # Keep generated oracles valid by construction. Types not listed here (balance,
-# lost card, fraud) can use any customer.
+# address, closure) can use any customer.
 eligibility:
-  transaction_dispute:
-    has_disputable_txn: [true]
   refuse_dispute:
     has_stale_txn: [true]
   fee_waiver:
     has_waivable_fee: [true]
-  refuse_fee_waiver:
-    has_blocked_fee: [true]
   lost_card_report:
-    has_active_card: [true]
-  fraud_escalation:
     has_active_card: [true]
 
 communicate_hints:
   balance_inquiry: >
     Include the exact current_balance as plain digits with a decimal point and
     no $ sign or thousands separator, e.g. ["412.37"].
-  transaction_dispute: >
-    Policy requires the agent to state both timelines: ["30 days", "90 days"].
   refuse_dispute: >
     The agent must cite the 60-day dispute window: ["60 days"].
   fee_waiver: 'The agent confirms the fee was waived: ["waived"].'
-  refuse_fee_waiver: >
-    Late payment fee blocked by a prior waiver: ["12 months"]. Returned payment
-    fee blocked by a prior waiver this year: ["calendar year"].
   lost_card_report: >
     The agent confirms a replacement card and zero liability after the report:
     ["replacement", "$0"].
-  fraud_escalation: >
-    The agent confirms a human agent will follow up: ["human agent"].
+  address_update: >
+    The agent reads the new address back, including the street name from the
+    requested address, e.g. ["1450 Peachtree St"].
+  account_closure_request: >
+    The agent says the balance must still be paid and a supervisor will follow
+    up: ["supervisor", "balance"].

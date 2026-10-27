@@ -113,6 +113,22 @@ CUSTOMERS: list[dict[str, Any]] = [
 ]
 
 
+ADDRESSES = {
+    "20417": "210 Juniper St NE, Atlanta, GA 30308",
+    "31588": "845 Cedar Ave, Decatur, GA 30030",
+    "44026": "77 Magnolia Rd, Marietta, GA 30060",
+    "52371": "3012 Shady Oak Dr, Atlanta, GA 30305",
+    "60845": "512 Oak Hollow Dr, Roswell, GA 30075",
+    "67199": "96 Birch Ln, Smyrna, GA 30080",
+    "71530": "430 Pine Crest Way, Alpharetta, GA 30009",
+    "78264": "18 Harbor View Ct, Savannah, GA 31401",
+    "83912": "702 Willow St, Athens, GA 30601",
+    "90077": "5 Lakeside Dr, Columbus, GA 31901",
+    "95408": "263 Azalea Blvd, Macon, GA 31201",
+    "99650": "1188 Ridgeway Pl, Augusta, GA 30901",
+}
+
+
 def _load_toolkit() -> Any:
     spec = importlib.util.spec_from_file_location("cu_tools", HERE / "tools.py")
     module = importlib.util.module_from_spec(spec)
@@ -134,6 +150,7 @@ def build_base() -> dict[str, Any]:
         db["customers"][cid] = {
             "customer_id": cid, "name": c["name"],
             "date_of_birth": c["dob"], "ssn_last4": c["ssn"],
+            "address": ADDRESSES[c["id"]],
         }
         db["accounts"][acct_id] = {
             "account_id": acct_id, "customer_id": cid, "account_last4": c["acct"],
@@ -258,7 +275,7 @@ def main() -> None:
     db = build_base()
     add_case_index(db)
     out = HERE / "db.json"
-    out.write_text(json.dumps(db, indent=2, ensure_ascii=False) + "\n")
+    out.write_text(json.dumps(db, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"wrote {out} ({len(db['customers'])} customers, {len(db['transactions'])} transactions, {len(db['fees'])} fees)")
 
 

@@ -7,7 +7,8 @@ goal_templates:
   - "I want to dispute the {merchant} charge of {amount}."
   - "Can you waive the late fee on my account?"
   - "I lost my card ending {last_four}, please replace it."
-  - "There are charges on my account I didn't make."
+  - "I moved recently, can you update the address on my account to {address}?"
+  - "I want to close my credit card account."
 
 # Styles sampled into task user_scenario.personality_style (name key only).
 personality_styles:

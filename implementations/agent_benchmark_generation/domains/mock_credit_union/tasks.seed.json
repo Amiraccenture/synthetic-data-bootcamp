@@ -20,26 +20,6 @@
       }
     },
     {
-      "id": "seed_transaction_dispute",
-      "description": "Dispute a recent charge for an incorrect amount",
-      "task_type": "transaction_dispute",
-      "user_scenario": {
-        "user_name": "Hannah Lindqvist",
-        "personality_style": "domain_expert",
-        "instructions": "Dispute the Nordic Outfitters charge of 148.00: your receipt says you were only charged 84.00, so the reason is an incorrect amount. If asked to verify, give: full name Hannah Lindqvist, account ending 2913, SSN last four 6618.",
-        "initial_message": "I need to open a dispute on a recent charge, there's a billing error."
-      },
-      "evaluation_criteria": {
-        "actions": [
-          { "name": "verify_identity", "arguments": { "full_name": "Hannah Lindqvist", "account_last4": "2913", "ssn_last4": "6618" } },
-          { "name": "get_transaction", "arguments": { "customer_id": "cu_60845", "transaction_id": "txn_60845_1" } },
-          { "name": "open_dispute", "arguments": { "customer_id": "cu_60845", "transaction_id": "txn_60845_1", "reason": "incorrect_amount" } }
-        ],
-        "communicate_info": ["30 days", "90 days"],
-        "reward_basis": ["DB", "COMMUNICATE"]
-      }
-    },
-    {
       "id": "seed_refuse_dispute",
       "description": "Refuse to dispute a charge outside the 60-day window",
       "task_type": "refuse_dispute",
@@ -79,25 +59,6 @@
       }
     },
     {
-      "id": "seed_refuse_fee_waiver",
-      "description": "Refuse a late fee waiver because one was already waived within 12 months",
-      "task_type": "refuse_fee_waiver",
-      "user_scenario": {
-        "user_name": "Tomás Rivera",
-        "personality_style": "rushed",
-        "instructions": "Ask for your latest late payment fee to be waived. You do not mention that a late fee was waived for you a few months ago. Accept the answer if it is explained. If asked to verify, give: full name Tomás Rivera, account ending 7740, date of birth 1983-06-18.",
-        "initial_message": "Take the late fee off my account, I'm in a hurry."
-      },
-      "evaluation_criteria": {
-        "actions": [
-          { "name": "verify_identity", "arguments": { "full_name": "Tomás Rivera", "account_last4": "7740", "date_of_birth": "1983-06-18" } },
-          { "name": "list_fees", "arguments": { "customer_id": "cu_52371" } }
-        ],
-        "communicate_info": ["12 months"],
-        "reward_basis": ["DB", "COMMUNICATE"]
-      }
-    },
-    {
       "id": "seed_lost_card_report",
       "description": "Replace a lost card",
       "task_type": "lost_card_report",
@@ -118,23 +79,40 @@
       }
     },
     {
-      "id": "seed_fraud_escalation",
-      "description": "Escalate suspected fraud and replace the compromised card",
-      "task_type": "fraud_escalation",
+      "id": "seed_address_update",
+      "description": "Update the address on file after the customer confirms it",
+      "task_type": "address_update",
       "user_scenario": {
-        "user_name": "Liam O'Connor",
-        "personality_style": "anxious",
-        "instructions": "Report that the Online Electronics and Gadget Galaxy charges are not yours and you think someone got your card number. You still have your card (ending 6038). Ask whether you will have to pay for them. If asked to verify, give: full name Liam O'Connor, account ending 7519, date of birth 1999-05-16.",
-        "initial_message": "There are charges on my account I never made. Someone must have my card number."
+        "user_name": "Omar Haddad",
+        "personality_style": "domain_expert",
+        "instructions": "Ask to change your address on file to 1450 Peachtree St NE, Atlanta, GA 30309. Confirm the address when the agent reads it back. If asked to verify, give: full name Omar Haddad, account ending 6631, date of birth 1977-10-12.",
+        "initial_message": "I moved recently and need to update the address on my card account."
       },
       "evaluation_criteria": {
         "actions": [
-          { "name": "verify_identity", "arguments": { "full_name": "Liam O'Connor", "account_last4": "7519", "date_of_birth": "1999-05-16" } },
-          { "name": "list_transactions", "arguments": { "customer_id": "cu_99650" } },
-          { "name": "escalate_to_human", "arguments": { "reason": "suspected_fraud", "customer_id": "cu_99650" } },
-          { "name": "replace_card", "arguments": { "customer_id": "cu_99650", "card_id": "card_99650_1", "reason": "compromised" } }
+          { "name": "verify_identity", "arguments": { "full_name": "Omar Haddad", "account_last4": "6631", "date_of_birth": "1977-10-12" } },
+          { "name": "update_address", "arguments": { "customer_id": "cu_90077", "new_address": "1450 Peachtree St NE, Atlanta, GA 30309" } }
         ],
-        "communicate_info": ["human agent"],
+        "communicate_info": ["1450 Peachtree St"],
+        "reward_basis": ["DB", "COMMUNICATE"]
+      }
+    },
+    {
+      "id": "seed_account_closure_request",
+      "description": "Escalate an account closure request to a supervisor",
+      "task_type": "account_closure_request",
+      "user_scenario": {
+        "user_name": "Beatrice Moreau",
+        "personality_style": "rushed",
+        "instructions": "Ask to close your credit card account today. If asked whether you still owe money, say you assumed closing would clear it. If asked to verify, give: full name Beatrice Moreau, account ending 1204, date of birth 1968-07-29.",
+        "initial_message": "I want to close my credit card account, please do it today."
+      },
+      "evaluation_criteria": {
+        "actions": [
+          { "name": "verify_identity", "arguments": { "full_name": "Beatrice Moreau", "account_last4": "1204", "date_of_birth": "1968-07-29" } },
+          { "name": "escalate_to_human", "arguments": { "reason": "supervisor_request", "customer_id": "cu_95408" } }
+        ],
+        "communicate_info": ["supervisor", "balance"],
         "reward_basis": ["DB", "COMMUNICATE"]
       }
     }
