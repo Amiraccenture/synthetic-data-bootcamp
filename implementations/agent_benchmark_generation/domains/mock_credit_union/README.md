@@ -26,7 +26,7 @@ This is **v1: 6 of the 19 task types** in [task_types.full.yaml](task_types.full
 | Type | Write? | What a correct agent does |
 |------|--------|---------------------------|
 | `balance_inquiry` | no | Verify, read the account, state the balance |
-| `refuse_dispute` | no | Verify, look up a charge past 60 days, refuse and cite the window |
+| `refuse_dispute` | yes | Verify, look up a charge past 60 days, refuse and cite the window, `escalate_to_human` (out_of_policy_request) |
 | `fee_waiver` | yes | Verify, check fee history, `waive_fee` once |
 | `lost_card_report` | yes | Verify, confirm which card, `replace_card`, state $0 liability |
 | `address_update` | yes | Verify, read the new address back, `update_address` |
