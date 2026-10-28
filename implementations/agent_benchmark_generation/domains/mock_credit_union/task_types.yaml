@@ -47,13 +47,14 @@ task_types:
       customer to report the loss in writing.
 
   refuse_dispute:
-    allow_write: false
+    allow_write: true
     description: >
       Customer asks to dispute a charge that is more than 60 days past the
       statement date on which it first appeared. Agent verifies identity, looks
       up the transaction, and refuses, explaining the 60-day window. The agent
-      suggests the customer contact the merchant directly. No dispute is opened
-      and nothing is written.
+      suggests the customer contact the merchant directly. No dispute is opened.
+      If the customer keeps insisting, the agent escalates to a human agent with
+      escalate_to_human (reason out_of_policy_request).
 
   account_closure_request:
     allow_write: true

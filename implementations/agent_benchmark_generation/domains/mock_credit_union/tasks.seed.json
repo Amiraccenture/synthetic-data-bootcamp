@@ -32,7 +32,8 @@
       "evaluation_criteria": {
         "actions": [
           { "name": "verify_identity", "arguments": { "full_name": "Daniel Okafor", "account_last4": "6102", "date_of_birth": "1979-09-03" } },
-          { "name": "get_transaction", "arguments": { "customer_id": "cu_31588", "transaction_id": "txn_31588_2" } }
+          { "name": "get_transaction", "arguments": { "customer_id": "cu_31588", "transaction_id": "txn_31588_2" } },
+          { "name": "escalate_to_human", "arguments": { "reason": "out_of_policy_request", "customer_id": "cu_31588" } }
         ],
         "communicate_info": ["60 days"],
         "reward_basis": ["DB", "COMMUNICATE"]

@@ -26,6 +26,7 @@ REQUIRED_WRITES = {
     "fee_waiver": {"waive_fee"},
     "lost_card_report": {"replace_card"},
     "address_update": {"update_address"},
+    "refuse_dispute": {"escalate_to_human"},
     "account_closure_request": {"escalate_to_human"},
 }
 
